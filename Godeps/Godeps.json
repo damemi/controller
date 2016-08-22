@@ -12,6 +12,10 @@
 			"Rev": "'75cd24fc2f2c2a2088577d12123ddee5f54e0675'"
 		},
 		{
+			"ImportPath": "github.com/MakeNowJust/heredoc",
+			"Rev": "1d91351acdc1cb2f2c995864674b754134b86ca7"
+		},
+		{
 			"ImportPath": "github.com/Sirupsen/logrus",
 			"Comment": "v0.7.3-4-gaaf92c9",
 			"Rev": "aaf92c95712104318fc35409745f1533aa5ff327"
@@ -145,6 +149,11 @@
 			"Rev": "0f5c9d301b9b1cca66b3ea0f9dec3b5317d3686d"
 		},
 		{
+			"ImportPath": "github.com/docker/docker/pkg/units",
+			"Comment": "v1.4.1-4831-g0f5c9d3",
+			"Rev": "0f5c9d301b9b1cca66b3ea0f9dec3b5317d3686d"
+		},
+		{
 			"ImportPath": "github.com/docker/go-units",
 			"Comment": "v0.1.0-21-g0bbddae",
 			"Rev": "0bbddae09c5a5419a8c6dcdd7ff90da3d450393b"
@@ -261,6 +270,77 @@
 			"Rev": "b982704f8bb716bb608144408cff30e15fbde841"
 		},
 		{
+			"ImportPath": "github.com/gonum/blas",
+			"Rev": "80dca99229cccca259b550ae3f755cf79c65a224"
+		},
+		{
+			"ImportPath": "github.com/gonum/blas/blas64",
+			"Rev": "80dca99229cccca259b550ae3f755cf79c65a224"
+		},
+		{
+			"ImportPath": "github.com/gonum/blas/native",
+			"Rev": "80dca99229cccca259b550ae3f755cf79c65a224"
+		},
+		{
+			"ImportPath": "github.com/gonum/blas/native/internal/math32",
+			"Rev": "80dca99229cccca259b550ae3f755cf79c65a224"
+		},
+		{
+			"ImportPath": "github.com/gonum/graph",
+			"Comment": "v0.9-100-gbde6d0f",
+			"Rev": "bde6d0fbd9dec5a997e906611fe0364001364c41"
+		},
+		{
+			"ImportPath": "github.com/gonum/graph/concrete",
+			"Comment": "v0.9-100-gbde6d0f",
+			"Rev": "bde6d0fbd9dec5a997e906611fe0364001364c41"
+		},
+		{
+			"ImportPath": "github.com/gonum/graph/encoding/dot",
+			"Comment": "v0.9-100-gbde6d0f",
+			"Rev": "bde6d0fbd9dec5a997e906611fe0364001364c41"
+		},
+		{
+			"ImportPath": "github.com/gonum/graph/internal",
+			"Comment": "v0.9-100-gbde6d0f",
+			"Rev": "bde6d0fbd9dec5a997e906611fe0364001364c41"
+		},
+		{
+			"ImportPath": "github.com/gonum/graph/path",
+			"Comment": "v0.9-100-gbde6d0f",
+			"Rev": "bde6d0fbd9dec5a997e906611fe0364001364c41"
+		},
+		{
+			"ImportPath": "github.com/gonum/graph/topo",
+			"Comment": "v0.9-100-gbde6d0f",
+			"Rev": "bde6d0fbd9dec5a997e906611fe0364001364c41"
+		},
+		{
+			"ImportPath": "github.com/gonum/graph/traverse",
+			"Comment": "v0.9-100-gbde6d0f",
+			"Rev": "bde6d0fbd9dec5a997e906611fe0364001364c41"
+		},
+		{
+			"ImportPath": "github.com/gonum/internal/asm",
+			"Rev": "5b84ddfb9d3e72d73b8de858c97650be140935c0"
+		},
+		{
+			"ImportPath": "github.com/gonum/lapack",
+			"Rev": "88ec467285859a6cd23900147d250a8af1f38b10"
+		},
+		{
+			"ImportPath": "github.com/gonum/lapack/lapack64",
+			"Rev": "88ec467285859a6cd23900147d250a8af1f38b10"
+		},
+		{
+			"ImportPath": "github.com/gonum/lapack/native",
+			"Rev": "88ec467285859a6cd23900147d250a8af1f38b10"
+		},
+		{
+			"ImportPath": "github.com/gonum/matrix/mat64",
+			"Rev": "fb1396264e2e259ff714a408a7b0142d238b198d"
+		},
+		{
 			"ImportPath": "github.com/google/cadvisor/info/v1",
 			"Comment": "v0.22.2",
 			"Rev": "546a3771589bdb356777c646c6eca24914fdd48b"
@@ -320,12 +400,52 @@
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
 		{
+			"ImportPath": "github.com/openshift/origin/pkg/api/graph",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/api/graph/graphview",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
 			"ImportPath": "github.com/openshift/origin/pkg/api/install",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
 		{
+			"ImportPath": "github.com/openshift/origin/pkg/api/kubegraph",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/api/kubegraph/analysis",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/api/kubegraph/nodes",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
 			"ImportPath": "github.com/openshift/origin/pkg/api/latest",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/auth/api",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/auth/authenticator",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/auth/authenticator/request/x509request",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
@@ -346,6 +466,11 @@
 		},
 		{
 			"ImportPath": "github.com/openshift/origin/pkg/authorization/api/v1beta3",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/authorization/reaper",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
@@ -400,12 +525,47 @@
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
 		{
+			"ImportPath": "github.com/openshift/origin/pkg/build/graph",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/build/graph/analysis",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/build/graph/nodes",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/build/reaper",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
 			"ImportPath": "github.com/openshift/origin/pkg/build/util",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
 		{
 			"ImportPath": "github.com/openshift/origin/pkg/client",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/cmd/cli/config",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/cmd/cli/describe",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/cmd/flagtypes",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
@@ -435,6 +595,11 @@
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
 		{
+			"ImportPath": "github.com/openshift/origin/pkg/cmd/util/clientcmd",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
 			"ImportPath": "github.com/openshift/origin/pkg/cmd/util/pem",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
@@ -456,6 +621,41 @@
 		},
 		{
 			"ImportPath": "github.com/openshift/origin/pkg/deploy/api/v1beta3",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/deploy/generator",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/deploy/graph",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/deploy/graph/analysis",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/deploy/graph/nodes",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/deploy/reaper",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/deploy/scaler",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/deploy/util",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
@@ -486,6 +686,16 @@
 		},
 		{
 			"ImportPath": "github.com/openshift/origin/pkg/image/api/v1beta3",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/image/graph",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/image/graph/nodes",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
@@ -595,6 +805,26 @@
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
 		{
+			"ImportPath": "github.com/openshift/origin/pkg/route/generator",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/route/graph",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/route/graph/analysis",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/route/graph/nodes",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
 			"ImportPath": "github.com/openshift/origin/pkg/scheduler/admission/podnodeconstraints/api",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
@@ -675,7 +905,27 @@
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
 		{
+			"ImportPath": "github.com/openshift/origin/pkg/user/reaper",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/util",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/util/errors",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
 			"ImportPath": "github.com/openshift/origin/pkg/util/namer",
+			"Comment": "v1.2.1-2-gc4c6233",
+			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
+		},
+		{
+			"ImportPath": "github.com/openshift/origin/pkg/util/parallel",
 			"Comment": "v1.2.1-2-gc4c6233",
 			"Rev": "c4c623390570658ef7e2fe22c2d4e70e3f11f488"
 		},
@@ -1040,6 +1290,11 @@
 			"Rev": "114a51dfbc43a8bcf07db1774a20e05d560e34b0"
 		},
 		{
+			"ImportPath": "k8s.io/kubernetes/pkg/kubectl/cmd/config",
+			"Comment": "v1.2.0-67-g114a51d",
+			"Rev": "114a51dfbc43a8bcf07db1774a20e05d560e34b0"
+		},
+		{
 			"ImportPath": "k8s.io/kubernetes/pkg/kubectl/cmd/util",
 			"Comment": "v1.2.0-67-g114a51d",
 			"Rev": "114a51dfbc43a8bcf07db1774a20e05d560e34b0"
@@ -1276,6 +1531,11 @@
 		},
 		{
 			"ImportPath": "k8s.io/kubernetes/third_party/forked/reflect",
+			"Comment": "v1.2.0-67-g114a51d",
+			"Rev": "114a51dfbc43a8bcf07db1774a20e05d560e34b0"
+		},
+		{
+			"ImportPath": "k8s.io/kubernetes/third_party/golang/netutil",
 			"Comment": "v1.2.0-67-g114a51d",
 			"Rev": "114a51dfbc43a8bcf07db1774a20e05d560e34b0"
 		},
