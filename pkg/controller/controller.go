@@ -5,6 +5,7 @@ import (
 
 	osclient "github.com/openshift/origin/pkg/client"
 
+	kapi "k8s.io/kubernetes/pkg/api"
 	kclient "k8s.io/kubernetes/pkg/client/unversioned"
 )
 
@@ -21,5 +22,8 @@ func NewController(os *osclient.Client, kc *kclient.Client) *Controller {
 }
 
 func (c *Controller) Run() {
-	fmt.Printf("Success!\n")
+	projects, err := c.openshiftClient.Projects()
+	for _, project := range projects.List(kapi.ListOptions{}) {
+		fmt.Printf("%s\n", project.ObjectMeta.Name)
+	}
 }
