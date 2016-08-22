@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/damemi/controller/pkg/controller"
 	_ "github.com/openshift/origin/pkg/api/install"
 	osclient "github.com/openshift/origin/pkg/client"
 	"github.com/openshift/origin/pkg/cmd/util/clientcmd"
@@ -27,6 +28,9 @@ func main() {
 		log.Printf("Error creating OpenShift client: %s", err)
 		os.Exit(2)
 	}
+
+	c := controller.NewController(openshiftClient, kubeClient)
+	c.Run()
 
 	fmt.Printf("Connected to OpenShift!\n")
 }
