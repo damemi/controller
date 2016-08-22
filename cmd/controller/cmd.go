@@ -7,6 +7,8 @@ import (
 
 	_ "github.com/openshift/origin/pkg/api/install"
 	osclient "github.com/openshift/origin/pkg/client"
+	"github.com/openshift/origin/pkg/cmd/util/clientcmd"
+
 	"github.com/spf13/pflag"
 	kclient "k8s.io/kubernetes/pkg/client/unversioned"
 )
@@ -25,4 +27,6 @@ func main() {
 		log.Printf("Error creating OpenShift client: %s", err)
 		os.Exit(2)
 	}
+
+	fmt.Printf("Connected to OpenShift!\n")
 }
