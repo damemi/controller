@@ -54,5 +54,6 @@ func (c *Controller) Run() {
 		Do()
 	err := r.Visit(func(info *resource.Info, err error) error {
 		fmt.Printf("%s\n", info.Name)
+		return nil
 	})
 }
