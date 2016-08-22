@@ -6,6 +6,7 @@ import (
 	osclient "github.com/openshift/origin/pkg/client"
 	"github.com/openshift/origin/pkg/cmd/util/clientcmd"
 
+	"github.com/spf13/pflag"
 	kapi "k8s.io/kubernetes/pkg/api"
 	"k8s.io/kubernetes/pkg/api/meta"
 	kclient "k8s.io/kubernetes/pkg/client/unversioned"
