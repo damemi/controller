@@ -22,8 +22,11 @@ func NewController(os *osclient.Client, kc *kclient.Client) *Controller {
 }
 
 func (c *Controller) Run() {
-	projects, err := c.openshiftClient.Projects()
-	for _, project := range projects.List(kapi.ListOptions{}) {
+	projects, err := c.openshiftClient.Projects().List(kapi.ListOptions{})
+	if err != nil {
+		fmt.Println(err)
+	}
+	for _, project := range projects {
 		fmt.Printf("%s\n", project.ObjectMeta.Name)
 	}
 }
