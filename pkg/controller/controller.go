@@ -26,7 +26,7 @@ func (c *Controller) Run() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	for _, project := range projects {
+	for _, project := range projects.Items {
 		fmt.Printf("%s\n", project.ObjectMeta.Name)
 	}
 }
