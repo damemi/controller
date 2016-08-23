@@ -5,6 +5,7 @@ import (
 
 	osclient "github.com/openshift/origin/pkg/client"
 	"github.com/openshift/origin/pkg/cmd/util/clientcmd"
+	"github.com/openshift/origin/pkg/project/api"
 
 	"github.com/spf13/pflag"
 	kapi "k8s.io/kubernetes/pkg/api"
@@ -53,7 +54,14 @@ func (c *Controller) Run() {
 		Flatten().
 		Do()
 	err := r.Visit(func(info *resource.Info, err error) error {
+		switch t := info.Object.(type) {
+		case *projectapi.Project:
+			fmt.Printf("%s is currently %s\n", t.ObjectMeta.Name, t.Status.Phase)
+		}
 		fmt.Printf("%s\n", info.Name)
 		return nil
 	})
+	if err != nil {
+		fmt.Println(err)
+	}
 }
