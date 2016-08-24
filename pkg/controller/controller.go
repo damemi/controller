@@ -5,7 +5,7 @@ import (
 
 	osclient "github.com/openshift/origin/pkg/client"
 	"github.com/openshift/origin/pkg/cmd/util/clientcmd"
-	"github.com/openshift/origin/pkg/project/api"
+	projectapi "github.com/openshift/origin/pkg/project/api"
 
 	"github.com/spf13/pflag"
 	kapi "k8s.io/kubernetes/pkg/api"
@@ -38,30 +38,12 @@ func NewController(os *osclient.Client, kc *kclient.Client) *Controller {
 }
 
 func (c *Controller) Run() {
-	/*
-		// Old code using OpenShift
-		projects, err := c.openshiftClient.Projects().List(kapi.ListOptions{})
-		if err != nil {
-			fmt.Println(err)
-		}
-		for _, project := range projects.Items {
-			fmt.Printf("%s\n", project.ObjectMeta.Name)
-		}
-	*/
-
-	r := resource.NewBuilder(c.mapper, c.typer, resource.ClientMapperFunc(c.f.ClientForMapping), kapi.Codecs.UniversalDecoder()).
-		ResourceTypeOrNameArgs(true, "projects").
-		Flatten().
-		Do()
-	err := r.Visit(func(info *resource.Info, err error) error {
-		switch t := info.Object.(type) {
-		case *projectapi.Project:
-			fmt.Printf("%s is currently %s\n", t.ObjectMeta.Name, t.Status.Phase)
-		}
-		fmt.Printf("%s\n", info.Name)
-		return nil
-	})
+	projects, err := c.openshiftClient.Projects().List(kapi.ListOptions{})
 	if err != nil {
 		fmt.Println(err)
 	}
+	for _, project := range projects.Items {
+		fmt.Printf("%s\n", project.ObjectMeta.Name)
+	}
+
 }
