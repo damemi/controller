@@ -2,10 +2,10 @@ package controller
 
 import (
 	"fmt"
+	"time"
 
 	osclient "github.com/openshift/origin/pkg/client"
 	"github.com/openshift/origin/pkg/cmd/util/clientcmd"
-	projectapi "github.com/openshift/origin/pkg/project/api"
 
 	"github.com/spf13/pflag"
 	kapi "k8s.io/kubernetes/pkg/api"
@@ -40,7 +40,7 @@ func NewController(os *osclient.Client, kc *kclient.Client) *Controller {
 
 func (c *Controller) Run(stopChan <-chan struct{}) {
 	go wait.Until(func() {
-		w, err := c.kubeClient.Pods(kapi.NamespaceAll).Watch(options)
+		w, err := c.kubeClient.Pods(kapi.NamespaceAll).Watch(kapi.ListOptions{})
 		if err != nil {
 			fmt.Println(err)
 		}
