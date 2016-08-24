@@ -28,7 +28,9 @@ func main() {
 	}
 
 	c := controller.NewController(openshiftClient, kubeClient)
-	c.Run()
+	stopChan := make(chan struct{})
+	c.Run(stopChan)
+	<-stopChan
 
 	fmt.Printf("Connected to OpenShift!\n")
 }

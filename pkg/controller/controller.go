@@ -5,12 +5,15 @@ import (
 
 	osclient "github.com/openshift/origin/pkg/client"
 	"github.com/openshift/origin/pkg/cmd/util/clientcmd"
+	projectapi "github.com/openshift/origin/pkg/project/api"
 
 	"github.com/spf13/pflag"
 	kapi "k8s.io/kubernetes/pkg/api"
 	"k8s.io/kubernetes/pkg/api/meta"
 	kclient "k8s.io/kubernetes/pkg/client/unversioned"
 	"k8s.io/kubernetes/pkg/runtime"
+	"k8s.io/kubernetes/pkg/util/wait"
+	"k8s.io/kubernetes/pkg/watch"
 )
 
 type Controller struct {
@@ -35,13 +38,37 @@ func NewController(os *osclient.Client, kc *kclient.Client) *Controller {
 	}
 }
 
-func (c *Controller) Run() {
-	projects, err := c.openshiftClient.Projects().List(kapi.ListOptions{})
-	if err != nil {
-		fmt.Println(err)
+func (c *Controller) Run(stopChan <-chan struct{}) {
+	go wait.Until(func() {
+		w, err := c.openshiftClient.Projects().Watch(kapi.ListOptions{})
+		if err != nil {
+			fmt.Println(err)
+		}
+		if w == nil {
+			return
+		}
+
+		for {
+			select {
+			case event, ok := <-w.ResultChan():
+				c.ProcessEvent(event, ok)
+			}
+		}
+	})
+}
+
+func (c *Controller) ProcessEvent(event watch.Event, ok bool) {
+	if !ok {
+		fmt.Println("Error received from watch channel")
 	}
-	for _, project := range projects.Items {
-		fmt.Printf("%s\n", project.ObjectMeta.Name)
+	if event.Type == watch.Error {
+		fmt.Println("Watch channel error")
 	}
 
+	switch t := event.Object.(type) {
+	case *projectapi.Project:
+		fmt.Printf("%s project %s\n", event.Type, t.ObjectMeta.Name)
+	default:
+		fmt.Printf("Unknown type\n")
+	}
 }
