@@ -40,7 +40,7 @@ func NewController(os *osclient.Client, kc *kclient.Client) *Controller {
 
 func (c *Controller) Run(stopChan <-chan struct{}) {
 	go wait.Until(func() {
-		w, err := c.openshiftClient.Projects().Watch(kapi.ListOptions{})
+		w, err := c.kubeClient.Pods(kapi.NamespaceAll).Watch(options)
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -54,7 +54,7 @@ func (c *Controller) Run(stopChan <-chan struct{}) {
 				c.ProcessEvent(event, ok)
 			}
 		}
-	})
+	}, 1*time.Millisecond, stopChan)
 }
 
 func (c *Controller) ProcessEvent(event watch.Event, ok bool) {
@@ -66,8 +66,8 @@ func (c *Controller) ProcessEvent(event watch.Event, ok bool) {
 	}
 
 	switch t := event.Object.(type) {
-	case *projectapi.Project:
-		fmt.Printf("%s project %s\n", event.Type, t.ObjectMeta.Name)
+	case *kapi.Pod:
+		fmt.Printf("%s pod %s in namespace %s\n", event.Type, t.ObjectMeta.Name, t.ObjectMeta.Namespace)
 	default:
 		fmt.Printf("Unknown type\n")
 	}
