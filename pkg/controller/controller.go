@@ -65,10 +65,29 @@ func (c *Controller) ProcessEvent(event watch.Event, ok bool) {
 		fmt.Println("Watch channel error")
 	}
 
+	var namespace string
+	var runtime float64
 	switch t := event.Object.(type) {
 	case *kapi.Pod:
-		fmt.Printf("%s pod %s in namespace %s\n", event.Type, t.ObjectMeta.Name, t.ObjectMeta.Namespace)
+		podList, err := c.kubeClient.Pods(t.ObjectMeta.Namespace).List(kapi.ListOptions{})
+		if err != nil {
+			fmt.Println(err)
+		}
+		for _, pod := range podList.Items {
+			runtime += c.TimeSince(pod.ObjectMeta.CreationTimestamp.String())
+		}
+		namespace = t.ObjectMeta.Namespace
 	default:
 		fmt.Printf("Unknown type\n")
 	}
+	fmt.Printf("Pods in namespace %v have been running for %v minutes.\n", namespace, runtime)
+}
+
+func (c *Controller) TimeSince(t string) float64 {
+	startTime, err := time.Parse("2006-01-02 15:04:05 -0700 EDT", t)
+	if err != nil {
+		fmt.Println(err)
+	}
+	duration := time.Since(startTime)
+	return duration.Minutes()
 }
